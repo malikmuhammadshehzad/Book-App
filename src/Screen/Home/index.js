@@ -31,11 +31,12 @@ const Home = () => {
       setBookData(data);
     }
   }, [isSuccess]);
+  
   useEffect(() => {
     if (search && data) {
       const filterData = data.filter(item => {
         const value = item.title.toLowerCase();
-        return value.includes(search.toLocaleLowerCase());
+        return value.includes(search.toLowerCase());
       });
       setBookData(filterData);
       console.log('🚀 ~ file: index.js:37 ~ useEffect ~ search:', search);
